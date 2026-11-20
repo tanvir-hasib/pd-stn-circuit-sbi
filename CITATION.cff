@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Levodopa and the STN–GPe circuit: simulation-based inference on STN-LFP and MEG in Parkinson's disease"
+version: "5.1"
+date-released: 2026-11-19
+license: MIT
+authors:
+  - family-names: Hasib
+    given-names: Tanvir
+    affiliation: "Multimedia University, Malaysia"
