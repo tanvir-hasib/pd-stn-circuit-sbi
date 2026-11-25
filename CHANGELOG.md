@@ -1,8 +1,27 @@
 # Changelog
 
-Each model revision was triggered by a failed check in the previous full run; the analysis was frozen at v5.1.
+Each model revision was triggered by a failed check in the previous full run; the analysis was frozen at v5.1. The revision analyses (v5.1-rev1) run on the frozen v5.1 networks.
 Caches are keyed by a configuration hash, so revisions that change the model rebuild every simulation bank and
 network.
+
+## v5.1-rev1 — revision analyses on the frozen v5.1 networks
+No change to the model, priors, statistics, networks, classifiers or pipeline lock (`pipeline_lock_v51.json`). The
+analyses in `revision/` execute the v5.1 pipeline with its caches and add simulations only for calibration and
+misspecification tests.
+* R1–R9: patient-level and mixed-model tests; HFO notch/HPI/artefact sensitivity; PAC partial correlations;
+  change-prior sparsity; misspecified fixed constants; simulation-calibrated null (R5b); predictive check under a
+  less sparse prior; Oxford bipolar-only; channel selection; clinical associations.
+* R10–R12b: recovery and sensitivity of the hierarchical population estimate; comparison of complete posterior
+  signatures across scenarios (nuisance, noise ↓, slow input ↓, w_GS ↓, w_GS ↓ + noise ↓) under assumed and
+  misspecified constants.
+* R13: one set of 36 in-reach hemispheres for all joint-network results; calibration of the hierarchical estimator on
+  184 simulated cohorts (bias-corrected population w_GS change ×0.76, Neyman 90 % CI 0.71–0.82); signature stability
+  with 12 pairs per hemisphere.
+* R14: calibration under alternative true effects (noise only, w_GS + noise, w_GG ×0.5, BG delays ×1.25): noise-only
+  cohorts never reach the data's shift under the assumed constants; corrected estimates ×0.76–0.82.
+* Interpretation revised accordingly: the v5.1 README's "≈ 14 % decrease" was the shrunk sparse-prior cohort mean;
+  the population effect is reported as the calibrated ×0.76, and a contribution of reduced input noise is not excluded.
+* Tools: `collect_results.py --revision`; `strip_restricted_outputs.py --scrub-paths` and `--check-only`.
 
 ## v5.1 — β-state HFO-gate ablation (frozen)
 * §10.8: the §10.7 posterior draws re-simulated with the fitted HFO gate, a frozen gate (both sessions at the OFF

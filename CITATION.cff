@@ -1,10 +1,31 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite it as below, and the article once published."
 title: "Levodopa and the STN–GPe circuit: simulation-based inference on STN-LFP and MEG in Parkinson's disease"
-version: "5.1"
-date-released: 2026-11-19
+version: "5.1-rev1"
+date-released: 2026-11-25
 license: MIT
+repository-code: "https://github.com/tanvir-hasib/pd-stn-circuit-sbi"
+# Add the Zenodo DOI of this release after Zenodo has minted it:
+# doi: "10.5281/zenodo.XXXXXXXX"
 authors:
   - family-names: Hasib
     given-names: Tanvir
     affiliation: "Multimedia University, Malaysia"
+  - family-names: Shunmugam
+    given-names: Parameswari
+    affiliation: "Sultan Salahuddin Abdul Aziz Shah Polytechnic, Malaysia"
+  - family-names: Vengadasalam
+    given-names: Vijayakumar
+    affiliation: "Multimedia University, Malaysia"
+references:
+  - type: article
+    title: "Calibrated simulation-based inference links levodopa's suppression of subthalamic beta oscillations to reduced STN–GPe loop drive in Parkinson's disease"
+    authors:
+      - family-names: Hasib
+        given-names: Tanvir
+      - family-names: Shunmugam
+        given-names: Parameswari
+      - family-names: Vengadasalam
+        given-names: Vijayakumar
+    status: submitted
+    year: 2026
